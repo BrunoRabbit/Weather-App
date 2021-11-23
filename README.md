@@ -1,6 +1,18 @@
-# weather_app
+# Weather web app
 
-A new Flutter project.
+A project using Flutter/Dart and other dependencies located in pubspec.yaml.
+This project has an objetive to see and locate a city and verify his weather forecast and weather conditions.
+A API that was used has from HG Weather - Free API that provides weather data for a city.
+
+API for informational purposes and no data is accurate.
+
+<br>
+Foi criado utilizando Flutter/Dart e outras dependencias localizadas no arquivo pubspec.yaml.
+Esse projeto tem o objetivo de ver e localizar uma cidade e verificar sua previsão do tempo e condicoes meteorológicas.
+A API que foi utilizado foi a HG Weather - API de graça que fornece informacoes de clima para uma cidade.
+<br><br>
+API para fins informativos e nenhum dado é preciso.
+
 
 ## Getting Started
 
