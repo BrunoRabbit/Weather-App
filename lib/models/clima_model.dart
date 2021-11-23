@@ -1,18 +1,26 @@
 import 'dart:convert';
 
+import 'package:weather_app/models/temperature_model.dart';
+
 class ClimaModel {
   int humidity;
   int temp;
   String city;
   String date;
-  String description;
+  List<TemperatureModel> temperatures;
+  String wingSpeed;
+  String sunrise;
+  String sunset;
 
   ClimaModel({
     required this.humidity,
     required this.temp,
     required this.city,
     required this.date,
-    required this.description,
+    required this.temperatures,
+    required this.wingSpeed,
+    required this.sunrise,
+    required this.sunset,
   });
 
   Map<String, dynamic> toMap() {
@@ -21,7 +29,10 @@ class ClimaModel {
       'temp': temp,
       'city': city,
       'date': date,
-      'description': description,
+      'temperatures': temperatures.map((x) => x.toMap()).toList(),
+      'wingSpeed': wingSpeed,
+      'sunrise': sunrise,
+      'sunset': sunset,
     };
   }
 
@@ -31,7 +42,11 @@ class ClimaModel {
       temp: map['results']['temp'],
       city: map['results']['city'],
       date: map['results']['date'],
-      description: map['results']['description'],
+      temperatures: List<TemperatureModel>.from(
+          map['results']['forecast']?.map((x) => TemperatureModel.fromMap(x))),
+      wingSpeed: map['results']['wind_speedy'],
+      sunrise: map['results']['sunrise'],
+      sunset: map['results']['sunset'],
     );
   }
 
